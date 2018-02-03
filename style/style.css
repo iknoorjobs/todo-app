@@ -8,6 +8,10 @@ body,input,button{
   font-family: 'Roboto', sans-serif;
 }
 
+.nofill{
+  fill:none;
+}
+
 header {
 
   height: 85px;
@@ -18,7 +22,7 @@ header {
   left: 0;
   right: 0;
   z-index: 5;
-  background:#25b99a;
+  background:#29B6F6;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   box-shadow: 0px 2px 4px rgba(44,62,80,0.15);
@@ -96,26 +100,129 @@ header button svg{
 }
 
 header button svg .fill{
-  fill:#25b99a;
+  fill:#29B6F6;
 }
 
 .container{
   width:100%;
-  float:left;
-  padding: 15px;
+  padding-top: 20px;
 }
 
-ul.todo{
-  list-style-type: none;
-  float: left;
+ .card{
+   width: 100%;
+   border-radius: 5px;
+   box-shadow: 0px 2px 4px rgba(44,62,80,0.10);
+   margin-bottom: 10px;
+   border: 0px;
+   outline: none;
+
+ }
+
+.card-body{
+  position: relative;
+  padding-right: 128px;
+  font-size: 15px;
+  padding: 20px
+  color: #444;
+
 }
 
-ul.todo li{
-  width:100%;
-  height: 50px;
-  background: #fff;
-  border-radius: 5px;
+.button{
+  width: 128px;
+  height: 64px;
+  right: 0;
+  top:0;
+  position: absolute;
+}
+
+.button button{
+  height: 64px;
+  width: 64px;
   float: left;
-  box-shadow: 0px 1px 2px rgba(44,62,80,0.10)
-  margin:0 0 10px 0;
+  background: none;
+  border: 0px;
+  box-shadow: none;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  -ms-appearance:none;
+  -o-appearance:none;
+  appearance:none;
+}
+
+.button button:last-of-type::before{
+  content: '';
+  width: 1px;
+  height: 35px;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background: #edf0f1;
+}
+
+.button button svg .fill{
+  transition: fill 0.3s ease;
+}
+
+.button button svg{
+  height: 22px;
+  width: 22px;
+  position: absolute;
+  top: 50%;
+  left:50%;
+  margin:-11px 0 0 -11px;
+}
+
+.button button.remove svg .fill{
+  fill:#C0CECB;
+}
+
+.button button.remove:hover svg .fill{
+  fill:#e85656;
+}
+
+.button button.complete svg .fill{
+  fill:#29B6F6;
+}
+
+.button button.complete svg{
+  border-radius: 11px;
+  border: 1.5px solid #29B6F6;
+  transition: background 0.2s ease;
+}
+
+.abc#completed .button button.complete svg{
+  background: #29B6F6;
+  border:0px;
+}
+
+.abc#completed .button button.complete svg .fill{
+  fill:#fff;
+}
+
+.abc:not(#completed) .button button.complete:hover svg{
+   background:#81D4FA;
+}
+
+.abc:not(#completed) .button button.complete:hover svg .fill{
+  fill:#fff;
+}
+
+div.abc#completed:not(:empty){
+  position: relative;
+  padding: 60px 0 0 0;
+}
+
+div.abc#completed:not(:empty):before{
+  content: '';
+  width: 150px;
+  height: 1px;
+  background: #d8e5e0;
+  position: absolute;
+  top:30px;
+  left: 50%;
+  margin: 0 0 0 -75px;
 }
