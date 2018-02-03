@@ -211,12 +211,12 @@ header button svg .fill{
   fill:#fff;
 }
 
-div.abc#completed:not(:empty){
+div.abc#completed{
   position: relative;
   padding: 60px 0 0 0;
 }
 
-div.abc#completed:not(:empty):before{
+div.abc#completed:before{
   content: '';
   width: 150px;
   height: 1px;
@@ -225,4 +225,22 @@ div.abc#completed:not(:empty):before{
   top:30px;
   left: 50%;
   margin: 0 0 0 -75px;
+}
+
+div.abc#todo:empty:after{
+  content: 'You have nothing To-Do !';
+  margin: 20px 0 0 0;
+}
+
+div.abc#completed:empty:after{
+  content: 'You have not completed any task';
+}
+
+div.abc#todo:after,
+div.abc#completed:after{
+  width: 100%;
+  text-align: center;
+  display: block;
+  font-size: 14px;
+  color: #aaa;
 }
